@@ -39,6 +39,18 @@ window.common = (function(global) {
   codeOutput.setSize('100%', '100%');
 
   common.updateOutputDisplay = function updateOutputDisplay(str = '') {
+    console.log(str);
+    console.log(typeof str);
+    if (typeof str === 'function') {
+      str = str.toString();
+      console.log(str);
+
+      str = String(str);
+      console.log(str);
+
+      str = str + '';
+      console.log(str);
+    }
     if (typeof str !== 'string') {
       str = JSON.stringify(str);
     }
